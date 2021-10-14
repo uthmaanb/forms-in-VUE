@@ -2,11 +2,19 @@
   <form>
     <label>Email:</label>
     <input type="email" required v-model="email" />
+
     <label>Password:</label>
     <input type="password" required v-model="password" />
+
+    <label>Role:</label>
+    <select v-model="role">
+      <option value="developer">Web Developer</option>
+      <option value="designer">Web Designer</option>
+    </select>
   </form>
   <p>Email: {{ email }}</p>
   <p>Password: {{ password }}</p>
+  <p>Role: {{ role }}</p>
 </template>
 
 <script>
@@ -15,6 +23,7 @@ export default {
     return {
       email: "",
       password: "",
+      role: "designer",
     };
   },
 };
@@ -38,7 +47,8 @@ label {
   letter-spacing: 1px;
   font-weight: bold;
 }
-input {
+input,
+select {
   display: block;
   padding: 10px 6px;
   width: 100%;
